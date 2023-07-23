@@ -4,90 +4,112 @@ let contador = 0;
 let isfinished = false;
 
 
-const remeras=[{
+const Productos=[{
   id:1,
   marca:"Nike",
   tipo:"Manga Corta",
   talle:"M",
+  nombre:"Remera",
   precio:2000
-},
+  },
   {
     id:2,
     marca:"Generica",
     tipo:"Camisa",
     talle:"M",
+    nombre:"Remera",
     precio: 3000
   },
-
   {
     id:3,
     marca:"Honda",
     tipo:"Musculosa",
     talle:"L",
+    nombre:"Remera",
     precio: 1500
-}]
-
-const Pantalones=[{
-  id:1,
-  marca:"Oggi",
-  tipo:"Jean",
-  talle:"L",
-  precio:2000
-},
+  },
   {
-    id:2,
+    id:4,
+    marca:"Oggi",
+    tipo:"Jean",
+    talle:"L",
+    nombre:"Pantalones",
+    precio:2000
+  },
+  {
+    id:5,
     marca:"Adidas",
     tipo:"Deportivo",
     talle:"XL",
+    nombre:"Pantalones",
     precio: 4000
   },
-
   {
-    id:3,
+    id:6,
     marca:"Quiksilver",
     tipo:"jogging",
     talle:"L",
+    nombre:"Pantalones",
     precio: 3500
-}]
-
-const Ropainterior=[{
-  id:1,
-  marca:"Snocks",
-  tipo:"Boxer",
-  talle:"L",
-  precio:1000
-},
+  },
   {
-    id:2,
+    id:7,
+    marca:"Snocks",
+    tipo:"Boxer",
+    talle:"L",
+    nombre:"ropainterior",
+    precio:1000
+  },
+  {
+    id:8,
     marca:"Calvin Klein",
     tipo:"Braga",
     talle:"M",
+    nombre:"ropainterior",
     precio: 700
-}]
-
-const Zapatos=[{
-  id:1,
-  marca:"Adidas",
-  tipo:"Running",
-  talle:"40",
-  precio:5000
-},
+  },
   {
-    id:2,
-    marca:"Topper",
-    tipo:"Salir",
-    talle:"29",
-    precio: 4000
-},
-{
-  id:2,
-  marca:"Nike",
-  tipo:"Todo tipo",
-  talle:"40,41,42",
-  precio: 6000
-}]
+    id:9,
+    marca:"Adidas",
+    tipo:"Running",
+    talle:"40",
+    nombre:"zapatos",
+    precio:5000
+  },
+    {
+      id:10,
+      marca:"Topper",
+      tipo:"Salir",
+      talle:"29",
+      nombre:"zapatos",
+      precio: 4000
+  },
+  {
+    id:11,
+    marca:"Nike",
+    tipo:"Todo tipo",
+    talle:"40,41,42",
+    nombre:"zapatos",
+    precio: 6000
+}];
 
+function filtrarprecio(preciomax){
+  const filtrados = Productos.filter((Producto)=>Producto.precio<=preciomax);
+  return filtrados;
+}
 
+let preciousuario=parseFloat(prompt("Ingresa el precio que puedas abonar. Salir(0)"));
+
+while(preciousuario!=0){
+  if(isNaN(preciousuario)||preciousuario<0){
+    alert("Ingrse un numero que sea valido");
+  }
+  else{
+    const productosfiltadtos = filtrarprecio(preciousuario);
+    console.table(productosfiltadtos);
+  }
+  preciousuario=parseFloat(prompt("Ingresar el precio que puedas abonar. Salir(0)"));
+}
 
 // while(isfinished==false){
 
@@ -95,27 +117,9 @@ const Zapatos=[{
 
 //   switch(id){
 //     case '1':
-//       let idr = prompt('Ingrese el modelo de remera que quiera comprar: 1.Remera manga corta 2.Camisa 3.Musculosa');
-
-//       switch(idr){
-//         case "1":
-//           total=total+remera1.precio
-//           contador=contador+1;
-//           alert("se ha añadido al carro");
-//         break;
-
-//         case "2":
-//           total=total+remera2.precio
-//           contador=contador+1;
-//           alert("se ha añadido al carro");
-//         break;
-
-//         case "3":
-//           total=total+remera3.precio
-//           contador=contador+1;
-//           alert("se ha añadido al carro");
-//         break;
-//       }
+    
+ 
+   
       
 //     total=total+1000;
 //     contador = contador+1;
